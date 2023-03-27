@@ -2,17 +2,17 @@ import {ApolloServer } from '@apollo/server';
 import { startStandaloneServer } from '@apollo/server/standalone';
 
 const authors = [
-  { id: '1', name: 'Author 1' },
-  { id: '2', name: 'Author 2' },
-  { id: '3', name: 'Author 3' },
+  { id: '1', name: 'J. K. Rowling' },
+  { id: '2', name: 'George R. R. Martin' },
+  { id: '3', name: 'stephen king' },
 ];
 
 const books = [
-  { id: '1', title: 'Book 1', authorId: '1' },
-  { id: '2', title: 'Book 2', authorId: '2' },
-  { id: '3', title: 'Book 3', authorId: '3' },
-  { id: '4', title: 'Book 4', authorId: '1' },
-  { id: '5', title: 'Book 5', authorId: '2' },
+  { id: '1', title: 'Fantastic Beasts and Where to Find Them', authorId: '1' },
+  { id: '2', title: 'A Game of Thrones', authorId: '2' },
+  { id: '3', title: 'Fairy Tale', authorId: '3' },
+  { id: '4', title: 'Harry Potter and the Philosopher Stone', authorId: '1' },
+  { id: '5', title: 'A Clash of Kings', authorId: '2' },
 ];
 
 const typeDefs = `#graphql

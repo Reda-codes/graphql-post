@@ -1,13 +1,12 @@
 import { useState } from 'react';
 import { useQuery, gql } from '@apollo/client';
-import './App.css';
 import DisplayCharacters from './components/DisplayCharacters'
 
 function App() {
   let [page, setPage] = useState(1);
 
   const GET_DATA = gql`
-      query GetCharacters{
+      query {
           characters(page:${page}) {
               info {
               count,
@@ -27,12 +26,12 @@ function App() {
 
   if (loading) return <p className='text-white text-lg font-mono font-bold text-center'>Loading...</p>;
   if (error) return <p>charactersError : {error.message}</p>;
-
+  console.log(data.characters);
   return (
     <>
       <div>
         <h1 className='text-5xl text-center m-5 mb-10 font-bold text-white'>Rick and Morty Characters</h1>
-        <DisplayCharacters loading={loading} error={error} data={data}/>
+        <DisplayCharacters data={data}/>
       </div>
       <div className='flex justify-center m-10'>
         <div className=''>
